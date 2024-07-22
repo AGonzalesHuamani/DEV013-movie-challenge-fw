@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
       {
-        "src": "package.json",
+        "src": "./DEV013-MOVIE-CHALLENGE/package.json",
         "use": "@vercel/static-build"
       }
     ],
