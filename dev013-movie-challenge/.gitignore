@@ -1,5 +1,7 @@
 .env
 
+coverage
+
 # Logs
 logs
 *.log
