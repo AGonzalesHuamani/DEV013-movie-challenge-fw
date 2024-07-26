@@ -1,4 +1,5 @@
 import Movie  from "../models/Movie"
+import {Genre} from "../services/movieService"
 
 // Definir el tipo de datos que recibo de la API
 export interface MovieData {
@@ -25,7 +26,7 @@ export interface MovieData {
  * @returns Un objeto Movie con los datos transformados.
  */
 
-  export function formatMovie(data: MovieData, genresNames: Map<number, string>): Movie {
+  export function formatMovie(data: any, genresNames: Map<number, string>): Movie {
     const movie: Movie = {
       id: data.id,
       title: data.title,
@@ -37,4 +38,12 @@ export interface MovieData {
       voteCount: data.vote_count
     };
     return movie;
+  }
+
+  export function formatGenresToMap(data: Genre[]) {
+    const genreMap = new Map();
+    data.map((el: Genre) => {
+        genreMap.set(el.id, el.name);
+    });
+    return genreMap;
   }
