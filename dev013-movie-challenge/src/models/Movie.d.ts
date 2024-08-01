@@ -1,14 +1,12 @@
 // Definir un tipo TypeScript llamado Movie
-type Movie = {
-    id: number;
-    title: string;
-    year: string;
-    posterPath: string;
-    genres: string[];
-    overview: string;
-    voteAverage: number;
-    voteCount: number;
-  }
-  
-  export default Movie
+export type Movie = {
+  id: number;
+  title: string;
+  poster: string;
+  year: string;
+  overview?: string;
+  rating?: number; 
+  genres: string[];
+};
+
   

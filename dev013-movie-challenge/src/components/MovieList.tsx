@@ -1,12 +1,16 @@
-import MovieCard from "./MovieCard"
+import { Movie } from "../models/Movie";
+import { MovieCard } from "./MovieCard";
 
-const MovieList = () => {
-  return (
-    <div>
-      <p>Aqui se muestran todas las tarjetas de pelis</p>
-      <MovieCard/>
-    </div>
-  )
+interface MovieList {
+  movies: Movie[];
 }
 
-export default MovieList
+export function MovieList({ movies }: MovieList) {
+  return (
+    <div className="containerlist">
+      {movies.map((movie) => (
+        <MovieCard key={movie.title} movie={movie} />
+      ))}
+    </div>
+  );
+}
